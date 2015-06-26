@@ -1,0 +1,15 @@
+{
+    "name": "xorth/wp-plugin-jcarousel",
+    "description": "Add a carousel using jquery-jcarousel plugin",
+    "type": "wordpress-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jorge Cortés",
+            "email": "jorge.cortes@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

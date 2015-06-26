@@ -1,0 +1,128 @@
+.highlights {
+    position: relative;
+    max-width: 970px;
+    padding: 9px;
+    margin: auto;
+    background-color: #d5d6da;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.highlights > div.jcarousel-container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.highlights > .jcarousel-container > div.jcarousel > ul > li > div.thumb-container > a {
+    display: block;
+}
+
+.highlights > .jcarousel-container > div.jcarousel > ul > li > div.thumb-container > a > img {
+    -webkit-transition: width .2s, height .2s,-webkit-transform .2s;  /* For Safari 3.1 to 6.0 */
+    transition: width .2s, height .2s, transform .2s;
+    width: 135px;
+    height: 135px;
+}
+
+.highlights > .jcarousel-container > div.jcarousel > ul > li > span {
+    visibility: hidden;
+}
+
+.highlights > .jcarousel-container > div.jcarousel > ul > li:hover > div.thumb-container > span {
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    word-wrap: break-word;
+    line-height: 14px;
+}
+
+.highlights > .jcarousel-container > div.jcarousel > ul > li:hover > div.type {
+    display: none;
+}
+
+.highlights > .jcarousel-container > div.jcarousel > ul > li:hover > div.thumb-container > a > img {
+    width: 145px;
+    height: 145px;
+}
+
+.highlights > .jcarousel-container > div.jcarousel > ul > li > div.thumb-container > span > a {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    text-align: center;
+}
+
+.jcarousel li {
+    display: inline-block;
+    position: relative;
+    width: 135px;
+    margin-right: 8px;
+    height: 92px;
+}
+
+.jcarousel li .thumb-container {
+    width: 135px;
+    height: 92px;
+    overflow: hidden;
+}
+
+.jcarousel li .type {
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+}
+
+.jcarousel li .label {
+    padding: 10px;
+    color: #FFF;
+    font-weight: bold;
+    background-color: #A60800;
+    text-transform: uppercase;
+    font-size: 75%;
+}
+
+.jcarousel li .tail {
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid #000;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+}
+
+.jcarousel-control {
+    width: 30px;
+    height: 92px;
+    position: absolute;
+    top: 9px;
+    cursor: pointer;
+}
+
+.jcarousel-control-prev {
+    left: 9px;
+    background: url("../images/jcarousel-arrows.png") no-repeat scroll 3px -1px #333652;
+}
+
+.jcarousel-control-next {
+    right: 9px;
+    background: url("../images/jcarousel-arrows.png") no-repeat scroll -44px -1px #333652;
+}
