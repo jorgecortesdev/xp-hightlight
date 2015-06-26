@@ -1,5 +1,5 @@
 <!-- Carousel -->
-<div class="highlights">
+<div class="wp-plugin-jcarousel-highlights">
     <div class="jcarousel-container">
         <div class="jcarousel" data-jcarousel="true">
             <ul>
