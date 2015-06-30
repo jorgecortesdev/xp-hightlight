@@ -6,8 +6,8 @@ class WP_Plugin_JCarousel_Public {
 
     public function __construct($plugin_name, $version) {
         $this->plugin_name = $plugin_name;
-        $this->version = $version;
-        $this->view = new WP_Plugin_JCarousel_View(basename(plugin_dir_path(__FILE__)));
+        $this->version     = $version;
+        $this->view        = new WP_Plugin_JCarousel_View(basename(plugin_dir_path(__FILE__)));
     }
 
     public function enqueue_styles() {
@@ -23,9 +23,16 @@ class WP_Plugin_JCarousel_Public {
         $this->view->file('wp-plugin-jcarousel-view');
 
         $args = array(
-            'category_name' => 'carousel',
-            'showposts' => 24,
-            'orderby' => 'rand'
+            'post_status' => 'publish',
+            'showposts'   => 24,
+            'orderby'     => 'rand',
+            'meta_query'  => array(
+            array(
+                    'key'     => '_wpph',
+                    'value'   => '1',
+                    'compare' => '=',
+                ),
+            )
         );
         $carousel_posts = new WP_Query($args);
         $posts = array();
