@@ -12,7 +12,7 @@
                     </div>
                     <?php endif; ?>
                     <div class="thumb-container">
-                        <a href="<?php echo $post['permalink'] ?>"><img width="<?php echo $post['thumbnail'][1] ?>" height="<?php echo $post['thumbnail'][2] ?>" src="<?php echo $post['thumbnail'][0] ?>" /></a>
+                        <a class="wpptrack" data-post-id="<?php echo $post['id']; ?>" data-section-id="1" href="<?php echo $post['permalink'] ?>"><img width="<?php echo $post['thumbnail'][1] ?>" height="<?php echo $post['thumbnail'][2] ?>" src="<?php echo $post['thumbnail'][0] ?>" /></a>
                         <span><a href="<?php echo $post['permalink'] ?>"><?php echo $post['title'] ?></a></span>
                     </div>
                 </li>

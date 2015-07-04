@@ -41,6 +41,7 @@ class WP_Plugin_JCarousel_Public {
                 $carousel_posts->the_post();
                 $post_thumbnail_id = get_post_thumbnail_id();
                 $posts[] = array(
+                    'id'        => get_the_ID(),
                     'permalink' => get_permalink(),
                     'title'     => get_the_title(),
                     'format'    => get_post_format(),
