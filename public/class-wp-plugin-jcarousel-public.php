@@ -24,7 +24,7 @@ class WP_Plugin_JCarousel_Public {
 
         $args = array(
             'post_status' => 'publish',
-            'showposts'   => 24,
+            'showposts'   => 12,
             'orderby'     => 'rand',
             'meta_query'  => array(
             array(
