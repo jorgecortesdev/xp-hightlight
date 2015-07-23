@@ -1,6 +1,6 @@
 {
-    "name": "xorth/wp-plugin-jcarousel",
-    "description": "Add a carousel using jquery-jcarousel plugin",
+    "name": "xorth/xp-hightlight",
+    "description": "Add a hightlight section to wordpress",
     "type": "wordpress-plugin",
     "license": "proprietary",
     "authors": [
