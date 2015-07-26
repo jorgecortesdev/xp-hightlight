@@ -31,7 +31,6 @@ class XP_Hightlight {
     public function define_admin_hooks() {
         $plugin_admin = new XP_Hightlight_Admin($this->get_plugin_name(), $this->get_version());
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
-        // $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
         $this->loader->add_action('load-post.php', $plugin_admin, 'post');
         $this->loader->add_action('load-post-new.php', $plugin_admin, 'post');
         $this->loader->add_action('admin_init', $plugin_admin, 'posts_list');
@@ -41,7 +40,10 @@ class XP_Hightlight {
         $plugin_public = new XP_Hightlight_Public($this->get_plugin_name(), $this->get_version());
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
+
         $this->loader->add_action('xp_hightlight_display', $plugin_public, 'display');
+
+        $this->loader->add_action('after_setup_theme', $plugin_public, 'add_featured_image_support');
     }
 
     public function run() {

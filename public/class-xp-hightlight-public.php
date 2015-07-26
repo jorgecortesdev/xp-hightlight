@@ -11,13 +11,14 @@ class XP_Hightlight_Public {
     }
 
     public function enqueue_styles() {
-        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/slick.css', array(), $this->version, 'all');
-        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/slick-theme.css', array(), $this->version, 'all');
+        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/xp-hightlight.css', array(), $this->version, 'all');
+        wp_enqueue_style('slick', plugin_dir_url(__FILE__)            . 'css/slick.css', array(), $this->version, 'all');
+        wp_enqueue_style('slick-theme', plugin_dir_url(__FILE__)      . 'css/slick-theme.css', array('slick'), $this->version, 'all');
     }
 
     public function enqueue_scripts() {
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/xp-hightlight.js', array('jquery'), $this->version, false);
-        wp_enqueue_script('jquery-carousel', plugin_dir_url(__FILE__) . 'js/slick.min.js', array('jquery'), '0.3.0', false);
+        wp_enqueue_script('slick', plugin_dir_url(__FILE__)            . 'js/slick.min.js', array('jquery'), '1.5.7', false);
+        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/xp-hightlight.js', array('slick'), $this->version, false);
     }
     
     public function display() {
@@ -46,7 +47,7 @@ class XP_Hightlight_Public {
                     'permalink' => get_permalink(),
                     'title'     => get_the_title(),
                     'format'    => get_post_format(),
-                    'thumbnail' => wp_get_attachment_image_src($post_thumbnail_id)
+                    'thumbnail' =>  get_the_post_thumbnail(get_the_ID(), 'xp-hightlight')
                 );
             }
         }
@@ -55,5 +56,15 @@ class XP_Hightlight_Public {
         $this->view->render();
 
         wp_reset_postdata();
+    }
+
+    public function add_featured_image_support() {
+        $supported_types = get_theme_support('post-thumbnails');
+
+        if($supported_types === false) {
+            add_theme_support('post-thumbnails');
+        }
+
+        add_image_size('xp-hightlight', 150, 150, true);
     }
 }

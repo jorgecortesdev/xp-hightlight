@@ -10,8 +10,7 @@ class XP_Hightlight_View {
     }
 
     public function file($view) {
-        $view = $view . '.php';
-        $view = plugin_dir_path(__FILE__) . '../' . $this->type . '/views/' . $view;
+        $view = $this->load_view($view);
         if (!file_exists($view)) {
             die('couldn\'t load view');
         }
@@ -37,5 +36,17 @@ class XP_Hightlight_View {
         } else {
             return $result;
         }
+    }
+
+    protected function load_view($view) {
+        $view = $view . '.php';
+
+        if (file_exists(get_stylesheet_directory() . '/xp-hightlight/' . $this->type . '/' . $view)) {
+            $view = get_stylesheet_directory() . '/xp-hightlight/' . $this->type . '/' . $view;
+        } else  {
+            $view = plugin_dir_path(__FILE__) . '../' . $this->type . '/views/' . $view;
+        }
+
+        return $view;
     }
 }

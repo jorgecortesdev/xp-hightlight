@@ -1,37 +1,23 @@
-<!-- Carousel -->
-<!-- <div class="wp-plugin-jcarousel-highlights">
-    <div class="jcarousel-container">
-        <div class="jcarousel" data-jcarousel="true">
-            <ul>
-                <?php foreach($posts as $post) : ?>
-                <li>
-                    <?php if ($post['format'] == 'gallery') : ?>
-                    <div class="type">
-                        <div class="tail"></div>
-                        <div class="label">gallery</div>
-                    </div>
-                    <?php endif; ?>
-                    <div class="thumb-container">
-                        <a class="wpptrack" data-post-id="<?php echo $post['id']; ?>" data-section-id="1" href="<?php echo $post['permalink'] ?>"><img width="<?php echo $post['thumbnail'][1] ?>" height="<?php echo $post['thumbnail'][2] ?>" src="<?php echo $post['thumbnail'][0] ?>" /></a>
-                        <span><a href="<?php echo $post['permalink'] ?>"><?php echo $post['title'] ?></a></span>
-                    </div>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
+<div class="xp-hightlight">
+    <a href="#" class="previous text-hide">Previous</a>
+    <div class="content">
+        <?php foreach($posts as $post) : ?>
+        <a href="<?php echo $post['permalink'] ?>"><?php echo $post['thumbnail'] ?></a>
+        <span><a href="<?php echo $post['permalink'] ?>"><?php echo $post['title'] ?></a></span>
+        <?php endforeach; ?>
     </div>
-    <div class="jcarousel-control jcarousel-control-prev" data-jcarouselcontrol="true"></div>
-    <div class="jcarousel-control jcarousel-control-next" data-jcarouselcontrol="true"></div>
-</div> -->
-<!-- .Carousel -->
-
-<div class="slider responsive">
-    <div><h3>1</h3></div>
-    <div><h3>2</h3></div>
-    <div><h3>3</h3></div>
-    <div><h3>4</h3></div>
-    <div><h3>5</h3></div>
-    <div><h3>6</h3></div>
-    <div><h3>7</h3></div>
-    <div><h3>8</h3></div>
+    <a href="#" class="next text-hide">Next</a>
 </div>
+
+<script>
+(function($) {
+    $('.xp-hightlight .content').slick({
+        infinite: true,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        centerMode: true,
+        prevArrow: $('.xp-hightlight .previous'),
+        nextArrow: $('.xp-hightlight .next')
+    });
+})(jQuery);
+</script>

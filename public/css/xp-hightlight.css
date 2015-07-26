@@ -1,0 +1,39 @@
+.xp-hightlight {
+    margin: 10px 0;
+    padding: 0 52px;
+    position: relative;
+}
+
+.xp-hightlight .next,
+.xp-hightlight .previous {
+    position: absolute;
+    display: block;
+    height: 150px;
+    width: 35px;
+    border: 1px solid #cbcbcb;
+    background: transparent url('../images/arrows.png') no-repeat;
+}
+
+.xp-hightlight .previous {
+    left: 10px;
+    top: 0;
+    background-position: 3px center;
+}
+
+.xp-hightlight .next {
+    right: 10px;
+    top: 0;
+    background-position: -42px center;
+}
+
+.xp-hightlight .content a img {
+    width: 150px;
+    height: 150px;
+}
+
+.xp-hightlight .text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+}
